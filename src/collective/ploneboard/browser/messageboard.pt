@@ -18,6 +18,7 @@
     <div tal:replace="structure provider:plone.belowcontenttitle" />
 
     <p class="documentDescription" tal:content="context/description" />
+    <p class="documentCategory" tal:content="context/category" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
