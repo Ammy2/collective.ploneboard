@@ -65,6 +65,7 @@ class MessageBoardViewIntegrationTest(unittest.TestCase):
         )
         self.board = self.portal['board']
         self.board.title = "My Message Board"
+	self.board.category = "Cat1"
 
     def test_messageboard_view(self):
         view = getMultiAdapter(
@@ -75,6 +76,7 @@ class MessageBoardViewIntegrationTest(unittest.TestCase):
         self.assertTrue(view())
         self.assertTrue(view.template.filename.endswith('messageboard.pt'))
         self.assertTrue('My Message Board' in view())
+        self.assertTrue('Cat1' in view())
 
     def test_topics_method_returns_topics(self):
         self.portal.board.invokeFactory('topic', id='topic1', title='Topic 1')

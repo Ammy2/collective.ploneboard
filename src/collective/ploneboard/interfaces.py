@@ -10,7 +10,7 @@ class IMessageboard(form.Schema):
     """
     category = schema.Text(
 		    title=_(u"Categories"),
-		    required=True
+		    required=False
 		    )
 
 class ITopic(form.Schema):

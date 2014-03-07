@@ -42,8 +42,12 @@ class PloneboardContenttypesFunctionalTest(unittest.TestCase):
         self.browser.getControl(
             name='form.widgets.IDublinCore.title'
         ).value = "My Message Board"
+	self.browser.getControl(
+	    name='form.widgets.category'
+	).value = "Cat1"
         self.browser.getControl("Save").click()
         self.assertTrue("My Message Board" in self.browser.contents)
+        self.assertTrue("Cat1" in self.browser.contents)
 
     def test_topic(self):
         self.portal.invokeFactory('messageboard', 'board')
