@@ -30,8 +30,11 @@ Add message board
 
   >>> browser.open(portal_url + '/++add++messageboard')
   >>> browser.getControl(name='form.widgets.IDublinCore.title').value = "My Message Board"
+  >>> browser.getControl(name='form.widgets.category').value = "Cat1"
   >>> browser.getControl("Save").click()
   >>> "My Message Board" in browser.contents
+  True
+  >>> "Cat1" in browser.contents
   True
 
 
